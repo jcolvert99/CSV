@@ -1,11 +1,21 @@
 import csv
 from datetime import datetime
 
-open_file = open("sitka_weather_2018_simple.csv","r")
+open_file = open("death_valley_2018_simple.csv","r")
 
 csv_file = csv.reader(open_file,delimiter=",")
 
 header_row = next(csv_file)
+
+print(type(header_row))
+
+for index, column_header in enumerate(header_row):
+    print(index,column_header)
+
+
+
+
+
 
 
 #-------------------------------
@@ -13,14 +23,25 @@ highs = []
 dates = []
 lows = []
 
+#try, except, else allows us to specify which errors we want to break the code
 for record in csv_file:
-    highs.append(int(record[5]))
-    the_date = datetime.strptime(record[2],'%Y-%m-%d')
-    dates.append(the_date)
-    lows.append(int(record[6]))
+    try:
+        the_date = datetime.strptime(record[2],'%Y-%m-%d')
+        high = int(record[4])
+        low = int(record[5])
+    except ValueError:
+        #f string allows us to incorporate variables directly into statements
+        print(f"Missing data for {the_date}")
+    else:
+        highs.append(int(record[4]))
+        lows.append(int(record[5]))
+        dates.append(the_date)
+    
 
-print(dates)
+#print(highs)
+#print(dates)
 
+'''
 #--------------------------------
    
     
@@ -58,3 +79,4 @@ plt.title("Lows")
 #super title is the title of the whole output
 plt.suptitle("Highs and Lows of Sitka, Alaska")
 plt.show()
+'''
