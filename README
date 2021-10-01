@@ -1,0 +1,23 @@
+Project Title: 'CSV'
+
+This project shows how to use the CSV module in Python to open a CSV file,
+read it, iterate through it, and use it for data visualization. When using 
+this project, it is important to import the "csv", "datetime", and 
+"matplotlib.pyplot" modules.
+
+Table of Contents:
+    1. sitka1: this python script was used as an introduction to using csv files.
+    We built a list out of the high temperatures by iterating through the csv
+    file and appending to the list, and then built a simple line plot of the data.
+    2. sitka2: in this python script, we added dates to the x-axis of the line
+    plot using the datetime module.
+    3. sitka3: this python script shows how to add multiple variables to a line
+    plot and fill in space between the lines. We also used the subplots() function to add multiple subplots to the same figure.
+    4. sitka4: in this python script, we used the "try,except,else" statements to specify what we want the program to do when a certain error is met. In this case, it was a ValueError.
+    5. sitka5: in this python script, we combined everything we've learned in a
+    comprehensive example. This program opens two separate files and uses the header row to determine index values for max temperature, min temperature, and dates. It then iterates through each file and assigns values to lists.
+    Finally, these lists are used to create a line plot with two subplots for
+    each data file, with the title automatically generated from the csv file.
+    6. This project uses 3 csv files containing station number, station name, dates, minimum temperature and maximum temperature.
+
+Project credit: John Colvert, Johnny Bhojwani

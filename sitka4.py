@@ -38,8 +38,8 @@ for record in csv_file:
         dates.append(the_date)
     
 
-#print(highs)
-#print(dates)
+print(highs)
+print(dates)
 
 '''
 #--------------------------------
